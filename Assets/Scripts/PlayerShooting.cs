@@ -22,10 +22,9 @@ public class PlayerShooting : NetworkBehaviour
     [ServerRpc]
     void ShootServerRpc()
     {
-        Debug.Log("hi");
         if (Physics.Raycast(gunBarrel.position, gunBarrel.forward, out RaycastHit hit))
         {
-            Debug.Log("hit");
+            Debug.Log("HIT " + hit.transform.name);
             var enemyHealth = hit.transform.GetComponent<PlayerHealth>();
             if (enemyHealth != null)
             {

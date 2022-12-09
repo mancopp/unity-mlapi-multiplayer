@@ -27,10 +27,7 @@ public class FirstPersonController : NetworkBehaviour
     public float maxPitch = 85f;
     [Range(-1f, -90f)]
     public float minPitch = -85f;
-    [Range(0.5f, 5f)]
-    public float mouseSensitivity = 5f;
 
-    //the charachtercompononet for moving us
     CharacterController cc;
 
     private void Start()
@@ -59,14 +56,10 @@ public class FirstPersonController : NetworkBehaviour
 
     void Look()
     {
-        float xInput = Input.GetAxis("Mouse X") * mouseSensitivity;
-        float yInput = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        float xInput = Input.GetAxis("Mouse X") * 50f;
+        float yInput = Input.GetAxis("Mouse Y") * 50f;
         transform.Rotate(0, xInput, 0);
 
-        //if(xInput != 0)Debug.Log(xInput);
-        
-        //transform.Rotate(0, xInput, 0);
-        
         pitch -= yInput;
         pitch = Mathf.Clamp(pitch, minPitch, maxPitch);
         Quaternion rot = Quaternion.Euler(pitch, 0, 0);
@@ -84,7 +77,6 @@ public class FirstPersonController : NetworkBehaviour
         if (cc.isGrounded)
         {
             yVelocity = -gravity * Time.deltaTime;
-            //check for jump here
             if (Input.GetButtonDown("Jump"))
             {
                 yVelocity = jumpSpeed;

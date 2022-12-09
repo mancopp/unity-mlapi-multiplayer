@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 7959771527233253426}
   - component: {fileID: 2169981890268816350}
   - component: {fileID: 3701433268336063662}
+  - component: {fileID: 7958510045022415517}
+  - component: {fileID: 6249488932314001273}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -74,7 +76,6 @@ MonoBehaviour:
   jumpSpeed: 10
   maxPitch: 85
   minPitch: -85
-  mouseSensitivity: 2
 --- !u!114 &7959771527233253426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +132,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletTrail: {fileID: 7463407485475880728, guid: 28d020d86a52849a5a0c45032b164da9, type: 3}
   gunBarrel: {fileID: 1806455802026375652}
+--- !u!114 &7958510045022415517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308581839681425388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ce5d9fd708f420abc3c585b79140e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP:
+    m_InternalValue: 100
+--- !u!114 &6249488932314001273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1308581839681425388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0782465e7fe4ee59fb3cf6eb6b8e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviours:
+  - {fileID: 1308581839681425379}
+  - {fileID: 7958510045022415517}
+  - {fileID: 3701433268336063662}
+  - {fileID: 7959771527233253426}
+  _explosionPrefab: {fileID: 0}
 --- !u!1 &1308581840737933387
 GameObject:
   m_ObjectHideFlags: 0

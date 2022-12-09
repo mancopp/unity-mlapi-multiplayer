@@ -23,6 +23,7 @@ public class PlayerRespawn : NetworkBehaviour
 
     public void RespawnOnServer()
     {
+        Debug.Log("Respawn Server");
         StartCoroutine(RespawnCoroutine());
     }
 
@@ -39,21 +40,20 @@ public class PlayerRespawn : NetworkBehaviour
     {
         characterController.enabled = false;
         SetPlayerState(false);
-        //Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
     }
     
     [ClientRpc]
     void ShowPlayerClientRpc()
     {
-        characterController.enabled = false;
-        SetPlayerState(false);
+        SetPlayerState(true);
+        characterController.enabled = true;
     }
     
     void SetPlayerState(bool state)
     {
         foreach (var script in behaviours)
         {
-            script.enabled = state;
+            //script.enabled = state;
         }
 
         foreach (var renderer in renderers)
